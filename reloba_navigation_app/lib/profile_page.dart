@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'demo_auth.dart';
+import 'login_screen.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -41,6 +43,24 @@ class ProfilePage extends StatelessWidget {
                   subtitle: Text('j.reloba.559602@umindanao.edu.ph'),
                 ),
               ],
+            ),
+          ),
+          const SizedBox(height: 24),
+          ElevatedButton.icon(
+            onPressed: () {
+              DemoAuth.logout();
+              Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                  builder: (context) => const LoginScreen(),
+                ),
+                (route) => false,
+              );
+            },
+            icon: const Icon(Icons.logout),
+            label: const Text('Logout'),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+              foregroundColor: Colors.white,
             ),
           ),
         ],
