@@ -1,67 +1,73 @@
 import 'package:flutter/material.dart';
+
 import 'demo_auth.dart';
 import 'login_screen.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  final String username;
+
+  const ProfilePage({super.key, required this.username});
+
+  void logout(BuildContext context) {
+    DemoAuth.logout();
+
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(builder: (context) => const LoginScreen()),
+      (route) => false,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('My Profile')),
+      appBar: AppBar(title: const Text('Student Profile')),
       body: ListView(
         padding: const EdgeInsets.all(24),
         children: [
           const CircleAvatar(
             radius: 50,
-            backgroundColor: Color(0xFF8E1EA2),
+            backgroundColor: Colors.indigo,
             child: Icon(Icons.person, size: 60, color: Colors.white),
           ),
           const SizedBox(height: 16),
+
           const Text(
-            'Joen Paul Reloba',
+            'Joen Paul Q. Reloba',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
+          const SizedBox(height: 8),
+
+          Text('Logged in as: $username', textAlign: TextAlign.center),
           const SizedBox(height: 24),
-          Card(
+
+          const Card(
             child: Column(
-              children: const [
+              children: [
                 ListTile(
                   leading: Icon(Icons.badge),
                   title: Text('Student ID'),
-                  subtitle: Text('559602'),
+                  subtitle: Text('YOUR STUDENT ID'),
                 ),
                 ListTile(
                   leading: Icon(Icons.school),
                   title: Text('Course and Section'),
-                  subtitle: Text('BSIT — CCE 106(3447)'),
+                  subtitle: Text('YOUR COURSE AND SECTION'),
                 ),
                 ListTile(
                   leading: Icon(Icons.email),
                   title: Text('Email'),
-                  subtitle: Text('j.reloba.559602@umindanao.edu.ph'),
+                  subtitle: Text('student@example.com'),
                 ),
               ],
             ),
           ),
           const SizedBox(height: 24),
+
           ElevatedButton.icon(
-            onPressed: () {
-              DemoAuth.logout();
-              Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(
-                  builder: (context) => const LoginScreen(),
-                ),
-                (route) => false,
-              );
-            },
+            onPressed: () => logout(context),
             icon: const Icon(Icons.logout),
             label: const Text('Logout'),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.red,
-              foregroundColor: Colors.white,
-            ),
           ),
         ],
       ),
