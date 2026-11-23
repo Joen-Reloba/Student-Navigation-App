@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "547979213382",
+    "project_id": "reloba-student-app",
+    "storage_bucket": "reloba-student-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547979213382:android:d649788d5ac17541ae2847",
+        "android_client_info": {
+          "package_name": "com.example.reloba_navigation_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDijR5k0F19YI8ebSig8DCNaggzrPGQAPE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
