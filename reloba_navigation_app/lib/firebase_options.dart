@@ -57,7 +57,6 @@ class DefaultFirebaseOptions {
     projectId: 'reloba-student-app',
     storageBucket: 'reloba-student-app.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyC8Pe0En3oSbm4_bUpWZXt-Riu5M3bAxNo',
     appId: '1:547979213382:ios:570e82e1963b88edae2847',
@@ -66,7 +65,6 @@ class DefaultFirebaseOptions {
     storageBucket: 'reloba-student-app.firebasestorage.app',
     iosBundleId: 'com.example.relobaNavigationApp',
   );
-
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyC8Pe0En3oSbm4_bUpWZXt-Riu5M3bAxNo',
     appId: '1:547979213382:ios:570e82e1963b88edae2847',
